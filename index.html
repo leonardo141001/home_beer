@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Restaurante</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- Firebase App (the core Firebase SDK) -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <!-- Firebase Analytics -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+  <!-- Firebase Realtime Database -->
+
+  <!-- Seus scripts -->
+
+
+
+</head>
+
+<body>
+
+  <!-- ======= Top Bar ======= -->
+  <div id="topbar" class="d-flex align-items-center fixed-top">
+    <div class="container d-flex justify-content-center justify-content-md-between">
+
+      <div class="contact-info d-flex align-items-center">
+        <i class="bi bi-clock d-flex align-items-center ms-4"><span> TER-DOM: 17:00 - 00:00</span></i>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-cente">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
+
+      <h1 class="logo me-auto me-lg-0"><a href="index.html">HOME BEER CARIRI</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+     
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+ 
+  <!-- ======= Menu Section ======= -->
+  <br><br><br><br>
+  <section id="menu" class="menu section-bg">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h2>Cardápio</h2>
+        <p>Confira nosso saboroso cardápio</p>
+
+        <div class="row">
+          <div class="col-lg-12 d-flex justify-content-center">
+            <button class="imprimir" onclick="imprimirPedido()">Imprimir Pedido</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="row" data-aos="fade-up" data-aos-delay="100">
+        <div class="col-lg-12 d-flex justify-content-center">
+          <ul id="menu-flters" class="list-unstyled">
+            <li data-filter="*" class="filter-active">Todos</li>
+            <li data-filter=".filter-petiscos">Petiscos</li>
+            <li data-filter=".filter-refeicoes">Refeições</li>
+            <li data-filter=".filter-cerveja">Cervejas</li>
+            <li data-filter=".filter-bebidas">Bebidas</li>
+            <li data-filter=".filter-espetos">Espetos</li>
+            <li data-filter=".filter-sucos">Sucos</li>
+            <li data-filter=".filter-vinho">Vinhos garrafa</li>
+            <li data-filter=".filter-doses">Doses</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-petiscos">
+          <img src="assets/img/menu/lobster-bisque.jpg" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Bolinha de queijo / carne de sol (10 und)</a><span id="valor">R$ 15,00</span>
+            <div>
+              <p>Quantidade: </p> <span id="counter_1">0</span>
+              <button onclick="incrementCounter(1)">Adicionar</button>
+            </div>
+          </div>
+          <div class="menu-ingredients">
+            <!-- Lorem, deren, trataro, filede, nerada -->
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-petiscos">
+          <img src="assets/img/menu/lobster-bisque.jpg" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Calabresa acebolada porção</a><span id="valor">R$ 12,00</span>
+            <div>
+              <p>Quantidade: </p> <span id="counter_2">0</span>
+              <button onclick="incrementCounter(2)">Adicionar</button>
+            </div>
+          </div>
+          <div class="menu-ingredients">
+            <!-- Lorem, deren, trataro, filede, nerada -->
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-petiscos">
+          <img src="assets/img/menu/lobster-bisque.jpg" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Carne de Sol com Macaxeira</a><span id="valor">R$ 25,00</span>
+            <div class="menu-ingredients">
+              Acompanha saladas e farofa
+            </div>
+            <div>
+              <p>Quantidade: </p><span id="counter_3">0</span>
+              <button onclick="incrementCounter(3)">Adicionar</button>
+            </div>
+          </div>
+          
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-petiscos">
+          <img src="assets/img/menu/lobster-bisque.jpg" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Azinha de frango porção</a><span id="valor">R$ 20,00</span>
+            <div>
+              <p>Quantidade: </p><span id="counter_4">0</span>
+              <button onclick="incrementCounter(4)">Adicionar</button>
+            </div>
+          </div>
+          <div class="menu-ingredients">
+            <!-- Acompanha saladas e farofa -->
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-petiscos">
+          <img src="assets/img/menu/lobster-bisque.jpg" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Feijão cremoso "P"</a><span id="valor">R$ 10,00</span>
+            <div>
+              <p>Quantidade: </p><span id="counter_5">0</span>
+              <button onclick="incrementCounter(5)">Adicionar</button>
+            </div>
+          </div>
+          <div class="menu-ingredients">
+            <!-- Acompanha saladas e farofa -->
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-petiscos">
+          <img src="assets/img/menu/lobster-bisque.jpg" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Feijão cremoso "G"</a><span id="valor">R$ 15,00</span>
+            <div>
+              <p>Quantidade: </p> <span id="counter_6">0</span>
+              <button onclick="incrementCounter(6)">Adicionar</button>
+            </div>
+          </div>
+          <div class="menu-ingredients">
+            <!-- Acompanha saladas e farofa -->
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-petiscos">
+          <img src="assets/img/menu/lobster-bisque.jpg" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Peixe Frito</a><span id="valor">R$ 25,00</span>
+            <div class="menu-ingredients">
+              Acompanha saladas e farofa 
+            </div>
+            <div>
+              <p>Quantidade: </p> <span id="counter_7">0</span>
+              <button onclick="incrementCounter(7)">Adicionar</button>
+            </div>
+          </div>
+          
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-petiscos">
+          <img src="assets/img/menu/lobster-bisque.jpg" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Torresmo porção</a><span id="valor">R$ 15,00</span>
+            <div>
+              <p>Quantidade: </p> <span id="counter_8">0</span>
+              <button onclick="incrementCounter(8)">Adicionar</button>
+            </div>
+          </div>
+          <div class="menu-ingredients">
+            <!-- Acompanha saladas e farofa -->
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-petiscos">
+          <img src="assets/img/menu/lobster-bisque.jpg" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Batata frita "P"</a><span id="valor">R$ 8,00</span>
+            <div>
+              <p>Quantidade: </p> <span id="counter_9">0</span>
+              <button onclick="incrementCounter(9)">Adicionar</button>
+            </div>
+          </div>
+          <div class="menu-ingredients">
+            <!-- Acompanha saladas e farofa -->
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-petiscos">
+          <img src="assets/img/menu/lobster-bisque.jpg" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Batata frita "G"</a><span id="valor">R$ 12,00</span>
+            <div>
+              <p>Quantidade: </p> <span id="counter_10">0</span>
+              <button onclick="incrementCounter(10)">Adicionar</button>
+            </div>
+          </div>
+          <div class="menu-ingredients">
+            <!-- Acompanha saladas e farofa -->
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-petiscos">
+          <img src="assets/img/menu/lobster-bisque.jpg" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Caldinho de feijão</a><span id="valor">R$ 5,00</span>
+            <div>
+              <p>Quantidade: </p> <span id="counter_11">0</span>
+              <button onclick="incrementCounter(11)">Adicionar</button>
+            </div>
+          </div>
+          <div class="menu-ingredients">
+            <!-- Acompanha saladas e farofa -->
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-petiscos">
+          <img src="assets/img/menu/lobster-bisque.jpg" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Caldinho de kenga</a><span id="valor">R$ 7,00</span>
+            <div>
+              <p>Quantidade: </p> <span id="counter_12">0</span>
+              <button onclick="incrementCounter(12)">Adicionar</button>
+            </div>
+          </div>
+          <div class="menu-ingredients">
+            <!-- Acompanha saladas e farofa -->
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-petiscos">
+          <img src="assets/img/menu/lobster-bisque.jpg" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Camarão alho e óleo</a><span id="valor">R$ 25,00</span>
+            <div>
+              <p>Quantidade: </p> <span id="counter_13">0</span>
+              <button onclick="incrementCounter(13)">Adicionar</button>
+            </div>
+          </div>
+          <div class="menu-ingredients">
+            <!-- Acompanha saladas e farofa -->
+          </div>
+        </div>
+        
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-petiscos">
+          <img src="assets/img/menu/lobster-bisque.jpg" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Mungunzá "P"</a><span id="valor">R$ 5,00</span>
+            <div>
+              <p>Quantidade: </p> <span id="counter_14">0</span>
+              <button onclick="incrementCounter(14)">Adicionar</button>
+            </div>
+          </div>
+          <div class="menu-ingredients">
+            <!-- Acompanha saladas e farofa -->
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-petiscos">
+          <img src="assets/img/menu/lobster-bisque.jpg" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Mungunzá "G"</a><span id="valor">R$ 8,00</span>
+            <div>
+              <p>Quantidade: </p> <span id="counter_15">0</span>
+              <button onclick="incrementCounter(15)">Adicionar</button>
+            </div>
+          </div>
+          <div class="menu-ingredients">
+            <!-- Acompanha saladas e farofa -->
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-petiscos">
+          <img src="assets/img/menu/lobster-bisque.jpg" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Favada</a><span id="valor">R$ 12,00</span>
+            <div>
+              <p>Quantidade: </p> <span id="counter_16">0</span>
+              <button onclick="incrementCounter(16)">Adicionar</button>
+            </div>
+          </div>
+          <div class="menu-ingredients">
+            <!-- Acompanha saladas e farofa -->
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-petiscos">
+          <img src="assets/img/menu/lobster-bisque.jpg" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Ovo codorna</a><span id="valor">R$ 7,00</span>
+            <div>
+              <p>Quantidade: </p> <span id="counter_17">0</span>
+              <button onclick="incrementCounter(17)">Adicionar</button>
+            </div>
+          </div>
+          <div class="menu-ingredients">
+            <!-- Acompanha saladas e farofa -->
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-petiscos">
+          <img src="assets/img/menu/lobster-bisque.jpg" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Piaba porção</a><span id="valor">R$ 10,00</span>
+            <div>
+              <p>Quantidade: </p> <span id="counter_18">0</span>
+              <button onclick="incrementCounter(18)">Adicionar</button>
+            </div>
+          </div>
+          <div class="menu-ingredients">
+            <!-- Acompanha saladas e farofa -->
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-petiscos">
+          <img src="assets/img/menu/lobster-bisque.jpg" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Codorna Und </a><span id="valor">R$ 5,00</span>
+            <div>
+              <p>Quantidade: </p><span id="counter_19">0</span>
+              <button onclick="incrementCounter(19)">Adicionar</button>
+            </div>
+          </div>
+          <div class="menu-ingredients">
+            <!-- Acompanha saladas e farofa -->
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-petiscos">
+          <img src="assets/img/menu/lobster-bisque.jpg" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Tábua de frios </a><span id="valor">R$ 30,00</span>
+            <div class="menu-ingredients">
+              Acompanha Salame, queijo, azeitona, ovo de codorna e pimenta biquinho. 
+            </div>
+            <div>
+              <p>Quantidade: </p><span id="counter_20">0</span>
+              <button onclick="incrementCounter(20)">Adicionar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-refeicoes">
+          <img src="assets/img/menu/lobster-bisque.jpg" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Jantinha</a><span id="valor">R$ 10,00</span>
+            <div class="menu-ingredients">
+              Acompanha Baião simples, Espeto R$4, vinagre e farofa.
+            </div>
+            <div>
+              <p>Quantidade: </p> <span id="counter_21">0</span>
+              <button onclick="incrementCounter(21)">Adicionar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-refeicoes">
+          <img src="assets/img/menu/lobster-bisque.jpg" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Jantinha</a><span id="valor">R$ 12,00</span>
+            <div class="menu-ingredients">
+              Acompanha Baião simples, Espeto R$6, vinagre e farofa.
+            </div>
+            <div>
+              <p>Quantidade: </p><span id="counter_22">0</span>
+              <button onclick="incrementCounter(22)">Adicionar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-refeicoes">
+          <img src="assets/img/menu/lobster-bisque.jpg" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Porção baião simples "P"</a><span id="valor">R$ 8,00</span>
+            <div class="menu-ingredients">
+              <!-- Acompanha Salame, queijo, azeitona, ovo de codorna e pimenta biquinho.  -->
+            </div>
+            <div>
+              <p>Quantidade: </p> <span id="counter_23">0</span>
+              <button onclick="incrementCounter(23)">Adicionar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-refeicoes">
+          <img src="assets/img/menu/lobster-bisque.jpg" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Porção baião simples "G"</a><span id="valor">R$ 12,00</span>
+            <div class="menu-ingredients">
+              <!-- Acompanha Salame, queijo, azeitona, ovo de codorna e pimenta biquinho.  -->
+            </div>
+            <div>
+              <p>Quantidade: </p> <span id="counter_24">0</span>
+              <button onclick="incrementCounter(24)">Adicionar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-refeicoes">
+          <img src="assets/img/menu/lobster-bisque.jpg" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Porção baião cremoso "P"</a><span id="valor">R$ 10,00</span>
+            <div class="menu-ingredients">
+              <!-- Acompanha Salame, queijo, azeitona, ovo de codorna e pimenta biquinho.  -->
+            </div>
+            <div>
+              <p>Quantidade: </p><span id="counter_25">0</span>
+              <button onclick="incrementCounter(25)">Adicionar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-refeicoes">
+          <img src="assets/img/menu/lobster-bisque.jpg" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Porção baião cremoso "G"</a><span id="valor">R$ 15,00</span>
+            <div class="menu-ingredients">
+              <!-- Acompanha Salame, queijo, azeitona, ovo de codorna e pimenta biquinho.  -->
+            </div>
+            <div>
+              <p>Quantidade: </p> <span id="counter_26">0</span>
+              <button onclick="incrementCounter(26)">Adicionar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-refeicoes">
+          <img src="assets/img/menu/lobster-bisque.jpg" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Peixe Frito completo</a><span id="valor">R$ 40,00</span>
+            <div class="menu-ingredients">
+              Acompanha Baião simples, Macaxeira, Macarrão, salada e farofa.
+            </div>
+            <div>
+              <p>Quantidade: </p> <span id="counter_27">0</span>
+              <button onclick="incrementCounter(27)">Adicionar</button>
+            </div>
+          </div>
+        </div>
+       
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-refeicoes">
+          <img src="assets/img/menu/lobster-bisque.jpg" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Feijoada "P"</a><span id="valor">R$ 15,00</span>
+            <div class="menu-ingredients">
+              Acompanha Arroz e salada.
+            </div>
+            <div>
+              <p>Quantidade: </p> <span id="counter_28">0</span>
+              <button onclick="incrementCounter(28)">Adicionar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-refeicoes">
+          <img src="assets/img/menu/lobster-bisque.jpg" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Feijoada "G"</a><span id="valor">R$ 25,00</span>
+            <div class="menu-ingredients">
+              Acompanha Arroz e salada.
+            </div>
+            <div>
+              <p>Quantidade: </p><span id="counter_29">0</span>
+              <button onclick="incrementCounter(29)">Adicionar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-cerveja">
+          <img src="assets/img/itens/skol.jpg" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Skol 300ml</a><span id="valor">R$ 4,00</span>
+            <div>
+              <p>Quantidade: </p><span id="counter_30">0</span>
+              <button onclick="incrementCounter(30)">Adicionar</button>
+            </div>
+          </div>
+        </div>
+       
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-cerveja">
+          <img src="assets/img/itens/bohemia.png" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Bohemia 300ml</a><span id="valor">R$ 4,00</span>
+            <div>
+              <p>Quantidade: </p><span id="counter_31">0</span>
+              <button onclick="incrementCounter(31)">Adicionar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-cerveja">
+          <img src="assets/img/itens/devassa.png" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Devassa 300ml</a><span id="valor">R$ 4,00</span>
+            <div>
+              <p>Quantidade: </p><span id="counter_32">0</span>
+              <button onclick="incrementCounter(32)">Adicionar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-cerveja">
+          <img src="assets/img/itens/heinekne.png" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Heineken long und</a><span id="valor">R$ 8,00</span>
+            <div>
+              <p>Quantidade: </p><span id="counter_33">0</span>
+              <button onclick="incrementCounter(33)">Adicionar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-cerveja">
+          <img src="assets/img/itens/stela.jpg" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Stela Long und</a><span id="valor">R$ 8,00</span>
+            <div>
+              <p>Quantidade: </p><span id="counter_34">0</span>
+              <button onclick="incrementCounter(34)">Adicionar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-cerveja">
+          <img src="assets/img/itens/budweiser.jpg" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Budweiser Long und</a><span id="valor">R$ 8,00</span>
+            <div>
+              <p>Quantidade: </p><span id="counter_35">0</span>
+              <button onclick="incrementCounter(35)">Adicionar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-bebidas">
+          <img src="assets/img/itens/coco.png" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Água de coco</a><span id="valor">R$ 4,00</span>
+            <div>
+              <p>Quantidade: </p><span id="counter_36">0</span>
+              <button onclick="incrementCounter(36)">Adicionar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-bebidas">
+          <img src="assets/img/itens/agua.webp" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Água com gás</a><span id="valor">R$ 3,00</span>
+            <div>
+              <p>Quantidade: </p><span id="counter_37">0</span>
+              <button onclick="incrementCounter(37)">Adicionar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-bebidas">
+          <img src="assets/img/itens/agua.webp" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Água sem gás</a><span id="valor">R$ 2,00</span>
+            <div>
+              <p>Quantidade: </p><span id="counter_38">0</span>
+              <button onclick="incrementCounter(38)">Adicionar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-bebidas">
+          <img src="assets/img/itens/ice.jpg" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Ice</a><span id="valor">R$ 8,00</span>
+            <div>
+              <p>Quantidade: </p><span id="counter_39">0</span>
+              <button onclick="incrementCounter(39)">Adicionar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-bebidas">
+          <img src="assets/img/itens/coca.jpg" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Coca cola Lata</a><span id="valor">R$ 5,00</span>
+            <div>
+              <p>Quantidade: </p><span id="counter_40">0</span>
+              <button onclick="incrementCounter(40)">Adicionar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-bebidas">
+          <img src="assets/img/itens/guarana.jpg" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Guaraná Lata</a><span id="valor">R$ 5,00</span>
+            <div>
+              <p>Quantidade: </p><span id="counter_41">0</span>
+              <button onclick="incrementCounter(41)">Adicionar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-bebidas">
+          <img src="assets/img/itens/fanta.jpg" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Fanta Lata</a><span id="valor">R$ 5,00</span>
+            <div>
+              <p>Quantidade: </p><span id="counter_42">0</span>
+              <button onclick="incrementCounter(42)">Adicionar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-bebidas">
+          <img src="assets/img/itens/cajuin.jpg" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Cajuina 600ml</a><span id="valor">R$ 6,00</span>
+            <div>
+              <p>Quantidade: </p><span id="counter_43">0</span>
+              <button onclick="incrementCounter(43)">Adicionar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-bebidas">
+          <img src="assets/img/itens/cajuina 1lt.jpg" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Cajuina 1lt</a><span id="valor">R$ 10,00</span>
+            <div>
+              <p>Quantidade: </p><span id="counter_44">0</span>
+              <button onclick="incrementCounter(44)">Adicionar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-bebidas">
+          <img src="assets/img/itens/redbull.jpg" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Red bull</a><span id="valor">R$ 12,00</span>
+            <div>
+              <p>Quantidade: </p><span id="counter_45">0</span>
+              <button onclick="incrementCounter(45)">Adicionar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-espetos">
+          <img src="assets/img/itens/espeto.jpg" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Boi</a><span id="valor">R$ 4,00</span>
+            <div>
+              <p>Quantidade: </p><span id="counter_46">0</span>
+              <button onclick="incrementCounter(46)">Adicionar</button>
+            </div>
+          </div>
+        </div>
+
+        
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-espetos">
+          <img src="assets/img/itens/espeto.jpg" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Porco</a><span id="valor">R$ 4,00</span>
+            <div>
+              <p>Quantidade: </p><span id="counter_47">0</span>
+              <button onclick="incrementCounter(47)">Adicionar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-espetos">
+          <img src="assets/img/itens/espeto.jpg" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Frango</a><span id="valor">R$ 4,00</span>
+            <div>
+              <p>Quantidade: </p><span id="counter_48">0</span>
+              <button onclick="incrementCounter(48)">Adicionar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-espetos">
+          <img src="assets/img/itens/espeto.jpg" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Linguiça</a><span id="valor">R$ 4,00</span>
+            <div>
+              <p>Quantidade: </p><span id="counter_49">0</span>
+              <button onclick="incrementCounter(49)">Adicionar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-espetos">
+          <img src="assets/img/itens/espeto.jpg" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Franbacon</a><span id="valor">R$ 6,00</span>
+            <div>
+              <p>Quantidade: </p><span id="counter_50">0</span>
+              <button onclick="incrementCounter(50)">Adicionar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-espetos">
+          <img src="assets/img/itens/espeto.jpg" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Cafta</a><span id="valor">R$ 6,00</span>
+            <div>
+              <p>Quantidade: </p><span id="counter_51">0</span>
+              <button onclick="incrementCounter(51)">Adicionar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-espetos">
+          <img src="assets/img/itens/espeto.jpg" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Tripa</a><span id="valor">R$ 4,00</span>
+            <div>
+              <p>Quantidade: </p><span id="counter_52">0</span>
+              <button onclick="incrementCounter(52)">Adicionar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-espetos">
+          <img src="assets/img/itens/espeto.jpg" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Coração</a><span id="valor">R$ 4,00</span>
+            <div>
+              <p>Quantidade: </p><span id="counter_53">0</span>
+              <button onclick="incrementCounter(53)">Adicionar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-espetos">
+          <img src="assets/img/itens/espeto.jpg" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Azinha</a><span id="valor">R$ 4,00</span>
+            <div>
+              <p>Quantidade: </p><span id="counter_54">0</span>
+              <button onclick="incrementCounter(54)">Adicionar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-espetos">
+          <img src="aassets/img/itens/espeto.jpg" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Queijo</a><span id="valor">R$ 4,00</span>
+            <div>
+              <p>Quantidade: </p><span id="counter_55">0</span>
+              <button onclick="incrementCounter(55)">Adicionar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-espetos">
+          <img src="assets/img/itens/espeto.jpg" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Queijo calabresa</a><span id="valor">R$ 4,00</span>
+            <div>
+              <p>Quantidade: </p><span id="counter_56">0</span>
+              <button onclick="incrementCounter(56)">Adicionar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-espetos">
+          <img src="assets/img/itens/espeto.jpg" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Linguiça caseira</a><span id="valor">R$ 6,00</span>
+            <div>
+              <p>Quantidade: </p><span id="counter_57">0</span>
+              <button onclick="incrementCounter(57)">Adicionar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-sucos">
+          <img src="assets/img/itens/copo suco.jpg" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Copo</a><span id="valor">R$ 3,00</span>
+            <div>
+              <p>Quantidade: </p><span id="counter_58">0</span>
+              <button onclick="incrementCounter(58)">Adicionar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-sucos">
+          <img src="assets/img/itens/jarra suco.png" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Jarra</a><span id="valor">R$ 8,00</span>
+            <div>
+              <p>Quantidade: </p><span id="counter_59">0</span>
+              <button onclick="incrementCounter(59)">Adicionar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-vinho">
+          <img src="assets/img/itens/vinho.jpg" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Quinta do morgado</a><span id="valor">R$ 25,00</span>
+            <div>
+              <p>Quantidade: </p><span id="counter_60">0</span>
+              <button onclick="incrementCounter(60)">Adicionar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-vinho">
+          <img src="assets/img/itens/vinho.jpg" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Pergola</a><span id="valor">R$ 35,00</span>
+            <div>
+              <p>Quantidade: </p><span id="counter_61">0</span>
+              <button onclick="incrementCounter(61)">Adicionar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-doses">
+          <img src="assets/img/itens/wisk.png" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Ypióca ouro/prata</a><span id="valor">R$ 3,00</span>
+            <div>
+              <p>Quantidade: </p><span id="counter_62">0</span>
+              <button onclick="incrementCounter(62)">Adicionar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-doses">
+          <img src="assets/img/itens/wisk.png" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">51 ouro</a><span id="valor">R$ 3,00</span>
+            <div>
+              <p>Quantidade: </p><span id="counter_63">0</span>
+              <button onclick="incrementCounter(63)">Adicionar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-doses">
+          <img src="assets/img/itens/wisk.png" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Dreher</a><span id="valor">R$ 3,00</span>
+            <div>
+              <p>Quantidade: </p><span id="counter_64">0</span>
+              <button onclick="incrementCounter(64)">Adicionar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-doses">
+          <img src="assets/img/itens/wisk.png" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Montila</a><span id="valor">R$ 3,00</span>
+            <div>
+              <p>Quantidade: </p><span id="counter_65">0</span>
+              <button onclick="incrementCounter(65)">Adicionar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-doses">
+          <img src="assets/img/itens/wisk.png" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Vodka</a><span id="valor">R$ 3,00</span>
+            <div>
+              <p>Quantidade: </p><span id="counter_66">0</span>
+              <button onclick="incrementCounter(66)">Adicionar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-doses">
+          <img src="assets/img/itens/wisk.png" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Campari</a><span id="valor">R$ 4,00</span>
+            <div>
+              <p>Quantidade: </p><span id="counter_67">0</span>
+              <button onclick="incrementCounter(67)">Adicionar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-doses">
+          <img src="assets/img/itens/wisk.png" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Dose black white</a><span id="valor">R$ 6,00</span>
+            <div>
+              <p>Quantidade: </p><span id="counter_68">0</span>
+              <button onclick="incrementCounter(68)">Adicionar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-doses">
+          <img src="assets/img/itens/wisk.png" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Dose Red label</a><span id="valor">R$ 8,00</span>
+            <div>
+              <p>Quantidade: </p><span id="counter_69">0</span>
+              <button onclick="incrementCounter(69)">Adicionar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 menu-item filter-doses">
+          <img src="assets/img/itens/wisk.png" class="menu-img img-fluid" alt="">
+          <div class="menu-content">
+            <a href="#">Dose old par</a><span id="valor">R$ 10,00</span>
+            <div>
+              <p>Quantidade: </p><span id="counter_70">0</span>
+              <button onclick="incrementCounter(70)">Adicionar</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      
+
+    </div>
+  </section><!-- End Menu Section -->
+
+  <footer>
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Restaurante</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/restaurantly-restaurant-template/ -->
+        Designed by <a href="https://teckpcs.com/" target="_blank">Teckpcs</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/funcoes.js"></script>
+
+
+
+</body>
+
+</html>
